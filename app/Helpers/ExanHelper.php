@@ -40,7 +40,7 @@ class ExanHelper
     {
         $response = $this->httpClient->request(
             'POST',
-            self::$endpoint . 'exan/guilds/in',
+            self::$endpoint . 'exan/guild/in',
             [
                 'json' => $guildIds,
             ]
