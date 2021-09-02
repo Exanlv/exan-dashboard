@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [AuthController::class, 'home'])->name('home');
+
+Route::get('auth/login', [AuthController::class, 'login'])->name('auth.login');
+Route::get('auth/cb', [AuthController::class, 'callback'])->name('auth.callback');
